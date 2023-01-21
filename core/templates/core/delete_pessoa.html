@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row">
+    <div class="col">
+        <h2>Tem certeza que deseja excluir a pessoa: {{ pessoa.nome }}</h2>
+
+        <form method="POST" action="{% url 'core_pessoa_delete' pessoa.id %}">
+            {% csrf_token %}
+            <button class="btn btn-primary" type="submit">Deletar</button>
+            
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

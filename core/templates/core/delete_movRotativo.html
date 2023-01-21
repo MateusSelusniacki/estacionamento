@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row">
+    <div class="col">
+        <h2>Tem certeza que deseja excluir o rotativo: {{ movRotativo.veiculo }} - {{ movRotativo.veiculo.placa }}</h2>
+
+        <form method="POST" action="{% url 'core_movRotativo_delete' movRotativo.id %}">
+            {% csrf_token %}
+            <button class="btn btn-primary" type="submit">Deletar</button>
+
+            
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
